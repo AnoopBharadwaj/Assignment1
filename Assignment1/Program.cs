@@ -73,7 +73,7 @@ namespace Assignment1
             double s = 0;
             for (int i = 1; i <= n; i++)
             {
-                s = s + Math.Pow(-1, i + 1) * (Fact(i) / (i + 1)); //As per given series formula
+                s = s + Math.Pow(-1, i + 1) * (Fact(i) / (i + 1));
             }
             return Math.Round(s, 3);
         }
@@ -81,7 +81,6 @@ namespace Assignment1
         public static double Fact(double n)
         {
             double i = 1;
-            // Iterating a multiplication fron n -> 1 decreasing value of n by 1 in each iteration   
             while (n != 0)
             {
                 i *= n;
@@ -90,34 +89,34 @@ namespace Assignment1
             return i;
         }
 
-        public static long DecimalToBinary(int D2B)
+        public static long DecimalToBinary(int Dec2Bin)
         {
-            int D = D2B;
-            int r;
+            int D = Dec2Bin;
+            int p;
             long i = 1;
             //string s = "";
             long s = 0; ;
             //while loop runs continuously until the number becomes 0
             while (D != 0)
             {
-                r = D % 2;
+                p = D % 2;
                 D = D / 2;
 
-                s += i * r;
+                s += i * p;
                 i *= 10;
             }
             return s;
         }
 
-        public static long BinaryToDecimal(long n)
+        public static long BinaryToDecimal(long b)
         {
-            long q = n, mul = 1, value = 0, r;
+            long q = b, mul = 1, value = 0, r;
 
             while (q != 0)
             {
                 r = q % 10;
                 q = q / 10;
-                // each binary remainder multiplied with powers of 2 is added to value variable and finally returned
+                // Value variable is added to Binary remainder multiplied with powers of 2 and finally returned.
                 value = value + (mul * r);
                 mul = mul*2;
             }
@@ -140,16 +139,16 @@ namespace Assignment1
         {
             int n = a.Length;
 
-            // Decalring and intializing an array freq to store frequeny of each element of the original array a
+            // Decalring and initializing an array frequency to compute frequeny of each element of the original array a
             int[] freq = new int[n];
 
-            //Iteratively intialzing every element of the array freq to -1
+            // Intialzing elements of the array.
             for (int i = 0; i < n; i++)
             {
                 freq[i] = -1;
             }
 
-            // Iteratively looping the array in-order to get the frequency of each element
+            // Looping the array in order to get the frequency of each element
             for (int i = 0; i < n; i++)
             {
                 int count = 1;
